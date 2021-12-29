@@ -10,8 +10,8 @@
   "author": "Elias Toivanen",
   "license": "MIT",
   "devDependencies": {
-    "chai": "4.2.0",
+    "chai": "4.3.4",
     "esm": "3.2.25",
-    "mocha": "6.2.2"
+    "mocha": "^9.1.3"
   }
 }

@@ -35,17 +35,17 @@ function* bitStream(input) {
  *
  */
 export function* encode(input, encoding = "utf8") {
-
   let questionmark = "?".charCodeAt(0);
-  let septet = 0, unknown = table.encoding[questionmark];
+  let septet = 0,
+    unknown = table.encoding[questionmark];
 
   if (!input) {
     return;
   }
 
-  let byte = 0, i = 0;
+  let byte = 0,
+    i = 0;
   for (const letter of String(Buffer.from(input, encoding))) {
-
     const codepoint = letter.charCodeAt(0);
     septet = table.encoding[codepoint];
     septet = isNaN(septet) ? unknown : septet;
@@ -58,7 +58,6 @@ export function* encode(input, encoding = "utf8") {
       }
       byte += bit << i++;
     }
-
   }
   yield byte;
 }
@@ -69,7 +68,8 @@ export function* encode(input, encoding = "utf8") {
  *
  */
 export function* decode(input) {
-  let septet = 0, i = 0;
+  let septet = 0,
+    i = 0;
 
   for (const bit of bitStream(input)) {
     if (i >= 7) {

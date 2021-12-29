@@ -1,9 +1,9 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
   rules: {
-    semi: 2
-  }
+    semi: 2,
+  },
 };
